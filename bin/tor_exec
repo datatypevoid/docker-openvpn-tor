@@ -2,4 +2,5 @@
 
 /bin/sh /etc/iptables.sh
 echo "nameserver 127.0.0.1" > /etc/resolv.conf
-sudo -u debian-tor bash -c tor
+echo "Running 'tor -f /etc/tor/torrc'"
+tor -f /etc/tor/torrc

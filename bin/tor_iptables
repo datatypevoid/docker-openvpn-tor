@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _out_if="eth0"
-_tor_uid=`id -u debian-tor`
+_tor_uid=`id -u tor`
 _trans_port="9040"
 _dns_port="5353"
 _virt_addr="10.192.0.0/10"

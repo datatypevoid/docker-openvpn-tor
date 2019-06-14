@@ -43,7 +43,7 @@ RUN chmod a+x /usr/local/bin/*
 COPY ./config/torrc /etc/tor/torrc.default
 RUN chown -R tor /etc/tor
 
-CMD ["ovpn_run", "tor_exec"]
+CMD ["start"]
 
 # Add support for OTP authentication using a PAM module
 ADD ./otp/openvpn /etc/pam.d/
