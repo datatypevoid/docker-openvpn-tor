@@ -1,2 +1,3 @@
-/usr/local/bin/ovpn_run
+#!/bin/sh
 /usr/local/bin/tor_exec
+/usr/local/bin/ovpn_run
