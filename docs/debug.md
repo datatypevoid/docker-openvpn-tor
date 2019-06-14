@@ -15,7 +15,7 @@ Random things I do to debug the containers.
 
         root@vpn:~/docker-openvpn# docker ps
         CONTAINER ID        IMAGE                      COMMAND             CREATED             STATUS              PORTS                    NAMES
-        ed335aaa9b82        kylemanna/openvpn:latest   ovpn_run            5 minutes ago       Up 5 minutes        0.0.0.0:1194->1194/udp   sad_lovelace
+        ed335aaa9b82        kylemanna/openvpn:latest   ovpn_run            5 minutes ago       Up 5 minutes        0.0.0.0:1195->1195/udp   sad_lovelace
 
 2. Tail the logs:
 
@@ -28,8 +28,8 @@ Random things I do to debug the containers.
         + iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -o eth0 -j MASQUERADE
         + conf=/etc/openvpn/openvpn.conf
         + [ ! -s /etc/openvpn/openvpn.conf ]
-        + conf=/etc/openvpn/udp1194.conf
-        + openvpn --config /etc/openvpn/udp1194.conf
+        + conf=/etc/openvpn/udp1195.conf
+        + openvpn --config /etc/openvpn/udp1195.conf
         Tue Jul  1 06:56:48 2014 OpenVPN 2.3.2 x86_64-pc-linux-gnu [SSL (OpenSSL)] [LZO] [EPOLL] [PKCS11] [eurephia] [MH] [IPv6] built on Mar 17 2014
         Tue Jul  1 06:56:49 2014 Diffie-Hellman initialized with 2048 bit key
         Tue Jul  1 06:56:49 2014 Control Channel Authentication: using '/etc/openvpn/pki/ta.key' as a OpenVPN static key file

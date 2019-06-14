@@ -34,8 +34,8 @@ ENV EASYRSA_CRL_DAYS 3650
 
 VOLUME ["/etc/openvpn"]
 
-# Internally uses port 1194/udp, remap using `docker run -p 443:1194/tcp`
-EXPOSE 1194/udp
+# Internally uses port 1195/udp, remap using `docker run -p 443:1195/tcp`
+EXPOSE 1195/udp
 
 ADD ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*
@@ -43,7 +43,7 @@ RUN chmod a+x /usr/local/bin/*
 COPY ./config/torrc /etc/tor/torrc.default
 RUN chown -R tor /etc/tor
 
-CMD ["start"]
+CMD ["tor_openvpn_start"]
 
 # Add support for OTP authentication using a PAM module
 ADD ./otp/openvpn /etc/pam.d/

@@ -11,7 +11,7 @@ services:
     image: kylemanna/openvpn
     container_name: openvpn
     ports:
-     - "1194:1194/udp"
+     - "1195:1195/udp"
     restart: always
     volumes:
      - ./openvpn-data/conf:/etc/openvpn
@@ -73,5 +73,5 @@ docker-compose run --rm openvpn ovpn_revokeclient $CLIENTNAME remove
 * Create an environment variable with the name DEBUG and value of 1 to enable debug output (using "docker -e").
 
 ```bash
-docker-compose run -e DEBUG=1 -p 1194:1194/udp openvpn
+docker-compose run -e DEBUG=1 -p 1195:1195/udp openvpn
 ```

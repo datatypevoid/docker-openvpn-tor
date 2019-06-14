@@ -27,7 +27,7 @@ docker run -v $OVPN_DATA:/etc/openvpn --rm $IMG ovpn_listclients | grep $CLIENT
 sudo iptables -N DOCKER || echo 'Firewall already configured'
 sudo iptables -I FORWARD -j DOCKER || echo 'Forward already configured'
 # run in shell bg to get logs
-docker run --name "ovpn-test" -v $OVPN_DATA:/etc/openvpn --rm -p 1194:1194/udp --privileged $IMG &
+docker run --name "ovpn-test" -v $OVPN_DATA:/etc/openvpn --rm -p 1195:1195/udp --privileged $IMG &
 
 #for i in $(seq 10); do
 #    SERV_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}')
@@ -38,7 +38,7 @@ docker run --name "ovpn-test" -v $OVPN_DATA:/etc/openvpn --rm -p 1194:1194/udp -
 #
 # Fire up a client in a container since openvpn is disallowed by Travis-CI, don't NAT
 # the host as it confuses itself:
-# "Incoming packet rejected from [AF_INET]172.17.42.1:1194[2], expected peer address: [AF_INET]10.240.118.86:1194"
+# "Incoming packet rejected from [AF_INET]172.17.42.1:1195[2], expected peer address: [AF_INET]10.240.118.86:1195"
 #
 docker run --rm --net=host --privileged --volume $CLIENT_DIR:/client $IMG /client/wait-for-connect.sh
 

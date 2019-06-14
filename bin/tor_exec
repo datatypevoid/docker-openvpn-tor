@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/bin/sh /etc/iptables.sh
+/bin/sh /user/local/tor_iptables
 echo "nameserver 127.0.0.1" > /etc/resolv.conf
 echo "Running 'tor -f /etc/tor/torrc'"
 tor -f /etc/tor/torrc
